@@ -1,0 +1,103 @@
+{
+	"info": {
+		"name": "Taller 3 - API Outfits y Armario Virtual",
+		"_postman_id": "taller-3-outfits-final",
+		"description": "Colección completa de pruebas para la API de prendas y outfits.",
+		"schema": "https://getpostman.com"
+	},
+	"item": [
+		{
+			"name": "1. Crear Prenda Superior (POST)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Chaqueta Denim\",\n    \"category\": \"Superior\",\n    \"imageUrl\": \"https://example.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/clothing"
+				}
+			}
+		},
+		{
+			"name": "2. Crear Prenda Inferior (POST)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Pantalón Cargo\",\n    \"category\": \"Inferior\",\n    \"imageUrl\": \"https://example.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/clothing"
+				}
+			}
+		},
+		{
+			"name": "3. Listar Todo el Armario (GET)",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://localhost:3000/api/v1/clothing"
+				}
+			}
+		},
+		{
+			"name": "4. Filtrar Prendas por Categoría (GET Query)",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://localhost:3000/api/v1/clothing?category=Superior"
+				}
+			}
+		},
+		{
+			"name": "5. Obtener Prenda por ID (GET Path)",
+			"request": {
+				"method": "GET",
+				"url": {
+					"raw": "http://localhost:3000/api/v1/clothing/1"
+				}
+			}
+		},
+		{
+			"name": "6. Crear un Outfit Combinado (POST)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Outfit Urbano Sábado\",\n    \"clothingIds\": [\"1\", \"2\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/outfits"
+				}
+			}
+		},
+		{
+			"name": "7. Eliminar una Prenda por ID (DELETE)",
+			"request": {
+				"method": "DELETE",
+				"url": {
+					"raw": "http://localhost:3000/api/v1/clothing/1"
+				}
+			}
+		}
+	]
+}
